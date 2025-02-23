@@ -372,6 +372,7 @@ class hotel_management_system : public running_func{
                 initializes_the_hash_table();
                 first_enter = true;
             }
+            save_all_file();
             show_first_menu();
             char first_chioce;
             cin>>first_chioce;
@@ -404,6 +405,7 @@ class hotel_management_system : public running_func{
 
         //登录菜单
         void login_menu(){
+            save_all_file();
             clear_screen();
             RF.show_login_second_menu();
             char login_choice;
@@ -431,6 +433,7 @@ class hotel_management_system : public running_func{
 
         //登录信息输入菜单
         void entry_of_login_information(string login_standing){
+            save_all_file();
             clear_screen();
             cout<<login_standing<<" login";el;
             cout << setfill('-') << setw(30) << "-" << setfill(' ') << endl;
@@ -805,6 +808,7 @@ class hotel_management_system : public running_func{
                 check_room_frist_menu(standing);
             }
             check_room_second_menu(standing,type,cnt);
+            cout<<"如果显示为空，则无符合条件的房间";el;
             cout << "输入任意字母返回";el;
             string cin1;cin >> cin1;
             clear_screen();
@@ -929,6 +933,7 @@ class hotel_management_system : public running_func{
         }
         //改变房间状态
         void change_room_state(const vector<string>& room_nums,const int operation){
+            save_all_file();
             for(const auto&rn:room_nums){
                 if(!room_state_zh[rn].empty()){
                     if(operation == 2){
@@ -1020,6 +1025,7 @@ class hotel_management_system : public running_func{
         
         //扣钱
         bool deduction_balance(int money) {
+            save_all_file();
             string temp = customer_map[name][1];
             int current_money = string_to_int(temp);
             if (current_money < money) {
@@ -1076,7 +1082,7 @@ class hotel_management_system : public running_func{
                 else if(choice_option == '5'){clear_screen();clear_screen();main_menu();}
                 else {
                     cout<<"错误输入！！！";el;
-                    time_stop(500);clear_screen();
+                    save_all_file();time_stop(500);clear_screen();
                     admin_operation();
                 }
                 
@@ -1098,7 +1104,7 @@ class hotel_management_system : public running_func{
                 else if(choice_option == '7'){clear_screen();clear_screen();main_menu();}
                 else {
                     cout<<"错误输入！！！";el;
-                    time_stop(500);clear_screen();
+                    save_all_file();time_stop(500);clear_screen();
                     customer_operation();
                 }
             }
