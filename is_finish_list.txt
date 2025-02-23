@@ -3,21 +3,29 @@
     用户 done
     顾客  done
     核对 done
-注册 1
+注册 
     用户 done
     顾客 done
     核对 done
 操作
     管理员
-        查信息（所有人/某个人） done
+        查顾客信息（所有人/某个人） done
         删除顾客 done
         查房 done
         管理房间是否可用 done
 
     顾客
-        充值
-        订房
-        退房
+        充值 done
+        订房 done
+        退房 done
+        查余额 done
         查房 done
         查信息（自己） done
+
+顾客map
+键：用户名 值：密码    余额    房间    房间类型
+管理者map
+键：用户名 值：密码
+房间map
+键：房号 值：普通/豪华    单人/双人    价格    是否已预订 
 

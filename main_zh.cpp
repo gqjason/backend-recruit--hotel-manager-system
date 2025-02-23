@@ -28,18 +28,18 @@ public:
     }//时间停止
 
     void file_open_unsuccess(){
-        cout << "Failed to open the file.\nPlease contact the administrator to solve the problem" << endl;
+        cout << "无法打开文件.\n请联系 https://github.com/gqjason 解决问题" << endl;
         time_stop(200);
-        cout<<"The program will exit.\nGoodbye";el;
+        cout<<"程序将退出.\n再见";el;
         time_stop(2000);
         clear_screen();
         exit(0);
     }
 
     void power_on(){
-        cout<<"Hello, welcome to the Hotel Management System.";el;//Hello, welcome to the Hotel Management System.
+        cout<<"你好，欢迎使用酒店管理系统。";el;//Hello, welcome to the Hotel Management System.
         time_stop(500);
-        cout<<"Please wait for a monent.....";//请等待
+        cout<<"请稍等片刻.....";//请等待
         time_stop(1000);
         clear_screen();
 
@@ -47,134 +47,129 @@ public:
     }
     //主菜单
     void show_first_menu(){
-        cout <<"Hotel Management System"; el;//hms Hotel Management System
+        cout <<"酒店管理系统"; el;//hms Hotel Management System
         cout << setfill('-') << setw(30) << "-" << setfill(' ') << endl;
-        cout<<"1. Login";el;//登录
-        cout<<"2. Register";el;//注册
-        cout<<"3. Exit";el;//退出
-        cout<<"Please enter options (1/2/3)";el;
+        cout<<"1. 登录";el;//登录
+        cout<<"2. 注册";el;//注册
+        cout<<"3. 退出";el;//退出
+        cout<<"请输入选项 (1/2/3)";el;
     }
     //登录菜单
     void show_login_second_menu(){
-        cout << setfill(' ') << setw(10) << " LOGIN " << setfill(' ') << endl;
+        cout << setfill(' ') << setw(10) << " 登录 " << setfill(' ') << endl;
         cout << setfill('-') << setw(30) << "-" << setfill(' ') << endl;
-        cout<<"1. Customer login";el;
-        cout<<"2. Administrator login";el;
-        cout<<"3. Return to the upper-level menu";el;
-        cout<<"Please enter options (1/2/3)";el;
+        cout<<"1. 客户登录";el;
+        cout<<"2. 管理员登录";el;
+        cout<<"3. 返回上一级菜单";el;
+        cout<<"请输入选项 (1/2/3)";el;
     }
     //注册菜单
     void show_register_second_menu(){
-        cout << setfill(' ') << setw(10) << " REGISTER " << setfill(' ') << endl;
+        cout << setfill(' ') << setw(10) << " 注册 " << setfill(' ') << endl;
         cout << setfill('-') << setw(30) << "-" << setfill(' ') << endl;
-        cout<<"1. Customer register";el;
-        cout<<"2. Administrator register";el;
-        cout<<"3. Return to the upper-level menu";el;
-        cout<<"Please enter options (1/2/3)";el;
+        cout<<"1. 客户注册";el;
+        cout<<"2. 管理员注册";el;
+        cout<<"3. 返回上一级菜单";el;
+        cout<<"请输入选项 (1/2/3)";el;
     }
     //管理员界面
+    
     void show_admin_first_menu(string admin_name){
-        cout<<"Welcome back, Administrator "<<admin_name<<" .";el;
+        cout<<"欢迎回来，管理员 "<<admin_name<<" .";el;
         cout << setfill('-') << setw(30) << "-" << setfill(' ') << endl;
-        cout<<"1. ";cout<<"Check customer information";el;
-        cout<<"2. ";cout<<"Check room status";el;
-        cout<<"3. ";cout<<"Management room is available";el;
-        cout<<"4. ";cout<<"Delete customers";el;
-        cout<<"5. ";cout<<"EXIT";el;
+        cout<<"1. ";cout<<"检查客户信息";el;
+        cout<<"2. ";cout<<"检查房间状态";el;
+        cout<<"3. ";cout<<"管理室可用";el;
+        cout<<"4. ";cout<<"删除客户";el;
+        cout<<"5. ";cout<<"退出";el;
         cout << setfill('-') << setw(30) << "-" << setfill(' ') << endl;
-        cout<<"Please enter options (1/2/3/4/5)";el;
+        cout<<"请输入选项 (1/2/3/4/5)";el;
 
     }
     //顾客界面
     void show_customer_first_menu(string customer_name){
-        cout<<"Welcome back, Customer "<<customer_name<<" .";el;
+        cout<<"欢迎回来，客户 "<<customer_name<<" .";el;
         cout << setfill('-') << setw(30) << "-" << setfill(' ') << endl;
-        cout<<"1. ";cout<<"Top-up";el;
-        cout<<"2. ";cout<<"Book a room";el;
-        cout<<"3. ";cout<<"Check out";el;
-        cout<<"4. ";cout<<"Check balance";el;
-        cout<<"5. ";cout<<"Check room status";el;
-        cout<<"6. ";cout<<"Check personal information";el;
-        cout<<"7. ";cout<<"EXIT";el;
+        cout<<"1. ";cout<<"充值";el;
+        cout<<"2. ";cout<<"预订房间";el;
+        cout<<"3. ";cout<<"退订房间";el;
+        cout<<"4. ";cout<<"检查余额";el;
+        cout<<"5. ";cout<<"检查房间状态";el;
+        cout<<"6. ";cout<<"检查个人信息";el;
+        cout<<"7. ";cout<<"退出";el;
         cout << setfill('-') << setw(30) << "-" << setfill(' ') << endl;
-        cout<<"Please enter options (1/2/3/4/5/6/7)";el;
+        cout<<"请输入选项 (1/2/3/4/5/6/7)";el;
     }
     //查询房间（类型）
     void show_the_query_room_status_menu_type(){
-        cout<<"Check room status";el;
+        cout<<"检查房间状态";el;
         cout << setfill('-') << setw(30) << "-" << setfill(' ') << endl;
-        cout<<"1. Single common room";el;
-        cout<<"2. Single deluxe room";el;
-        cout<<"3. Double common room";el;
-        cout<<"4. Double Deluxe Room";el;
-        cout<<"5. all";el;
-        cout<<"6. exit";el;
+        cout<<"1. 单人普通房";el;
+        cout<<"2. 单人豪华房";el;
+        cout<<"3. 双人普通房";el;
+        cout<<"4. 双人豪华房";el;
+        cout<<"5. 所有";el;
+        cout<<"6. 退出";el;
         cout << setfill('-') << setw(30) << "-" << setfill(' ') << endl;
-        cout<<"Please enter options (1/2/3/4/5/6)";el;
+        cout<<"请输入选项 (1/2/3/4/5/6)";el;
     }
     //查询房间（状态）
     void show_the_query_room_book_status_menu(){
-        cout<<"Check room status";el;
+        cout<<"检查房间状态";el;
         cout << setfill('-') << setw(30) << "-" << setfill(' ') << endl;
-        cout<<"1. Booked";el;
-        cout<<"2. Not booked";el;
-        cout<<"3. all";el;
-        cout<<"4. exit";el;
+        cout<<"1. 已预订";el;
+        cout<<"2. 未预订";el;
+        cout<<"3. 所有";el;
+        cout<<"4. 退出";el;
         cout << setfill('-') << setw(30) << "-" << setfill(' ') << endl;
-        cout<<"Please enter options (1/2/3/4)";el;
+        cout<<"请输入选项 (1/2/3/4)";el;
     }
     //管理房间类型
     void show_room_is_available_menu_type(){
-        cout<<"Manage rooms";el;
+        cout<<"管理房间状态";el;
         cout << setfill('-') << setw(30) << "-" << setfill(' ') << endl;
-        cout<<"1. Single common room";el;
-        cout<<"2. Single deluxe room";el;
-        cout<<"3. Double common room";el;
-        cout<<"4. Double Deluxe Room";el;
-        cout<<"5. all";el;
-        cout<<"6. Enter the specific room numbers";el;
-        cout<<"7. exit";el;
+        cout<<"1. 单人普通房";el;
+        cout<<"2. 单人豪华房";el;
+        cout<<"3. 双人普通房";el;
+        cout<<"4. 双人豪华房";el;
+        cout<<"5. 所有";el;
+        cout<<"6. 输入具体的房间号码";el;
+        cout<<"7. 退出";el;
         cout << setfill('-') << setw(30) << "-" << setfill(' ') << endl;
-        cout<<"Please enter options (1/2/3/4/5/6/7)";el;
+        cout<<"请输入选项 (1/2/3/4/5/6/7)";el;
     }
     //管理房间是否可用
     void show_room_is_available_room_book_status_menu(){
-        cout<<"What state do you want to convert these rooms into?";el;
+        cout<<"你想把这些房间转换成什么状态？";el;
         cout << setfill('-') << setw(30) << "-" << setfill(' ') << endl;
-        cout<<"1. Booked";el;
-        cout<<"2. Not booked";el;
-        cout<<"3. exchange";el;
-        cout<<"4. exit";el;
+        cout<<"1. 不可用";el;
+        cout<<"2. 可用";el;
+        cout<<"3. 互换";el;
+        cout<<"4. 退出";el;
         cout << setfill('-') << setw(30) << "-" << setfill(' ') << endl;
-        cout<<"Please enter options (1/2/3/4)";el;
+        cout<<"请输入选项 (1/2/3/4)";el;
     }
     //订房一级目录
     void show_book_room_first_menu(){
-        cout<<"Book room";el;
+        cout<<"预订房间";el;
         cout << setfill('-') << setw(30) << "-" << setfill(' ') << endl;
-        cout<<"1. Single common room";el;
-        cout<<"2. Single deluxe room";el;
-        cout<<"3. Double common room";el;
-        cout<<"4. Double Deluxe Room";el;
-        cout<<"5. all";el;
-        cout<<"6. exit";el;
+        cout<<"1. 单人普通房";el;
+        cout<<"2. 单人豪华房";el;
+        cout<<"3. 双人普通房";el;
+        cout<<"4. 双人豪华房";el;
+        cout<<"5. 所有";el;
+        cout<<"6. 退出";el;
         cout << setfill('-') << setw(30) << "-" << setfill(' ') << endl;
-        cout<<"Please enter options (1/2/3/4/5/6)";el;
+        cout<<"请输入选项 (1/2/3/4/5/6)";el;
     }
     //退房一级目录
     void show_customer_check_out_first_menu(){
-        cout<<"Checkout Menu";el;
+        cout<<"退房菜单";el;
         cout << setfill('-') << setw(30) << "-" << setfill(' ') << endl;
-        cout<<"1. Confirm";el;
-        cout<<"2. Cancel";el;
+        cout<<"1. 确认";el;
+        cout<<"2. 取消";el;
         cout << setfill('-') << setw(30) << "-" << setfill(' ') << endl;
-        cout<<"Please enter an option (1/2) :";
-    }
-
-    string cut_str(string s){
-        string res = "";
-        for(int i=0;i < s.length() and s[i] != ' ';i++){res += s[i];}
-        return res;
+        cout<<"请输入一个选项 (1/2) : ";
     }
 
     int string_to_int(string s) {
@@ -192,9 +187,9 @@ public:
 
 class hotel_management_system : public running_func{
     public:
-        map<string, vector<string>>customer_map,room_state;
+        map<string, vector<string>>customer_map,room_state_zh;
         map<string, string>admin_map;
-        string admin = "administrator", cus = "customer",nor = "normal",lux = "luxurious",sr = "single_room",dr = "double_room";
+        string admin = "administrator", cus = "customer",nor = "普通",lux = "豪华",sr = "单人房",dr = "双人";
         running_func RF;
         string name;
         string password;
@@ -204,32 +199,33 @@ class hotel_management_system : public running_func{
         int number_of_repeats = 0;
 
         void file_open_unsuccess() {
-            cout << "Failed to open the file.\nPlease contact the administrator to solve the problem" << endl;
+            cout << "无法打开文件。\n请联系 https://github.com/gqjason 解决问题" << endl;
             time_stop(200);
-            cout << "The program will exit.\nGoodbye";el;
+            cout << "程序将退出。\n再见";el;
             time_stop(2000);
             exit_operation();
         }
         
         void room_initialization() {
-            string room_path = "./information/room_state.txt";
+            
+            string room_path = "./information_zh/room_state_zh.txt";
             ofstream room_info_file(room_path, ios::out);
             if (!room_info_file.is_open()) {
-                cerr << "Functions : room_initialization !!!\n ERROR : Failed to open the file. \"room_state.txt\"." << endl;
+                cerr << "函数运行错误 : room_initialization !!!\n 错误：无法打开文件 \"room_state_zh.txt\"." << endl;
                 return;
             }
             for (int floor = 2;floor <= 30;floor++) {
                 for (int num = 0;num <= 9;num++) {
-                    string room_num = (floor < 10 ? "0" : "") + to_string(floor) + "0" + to_string(num), room_type = "normal",room_member_num = "single_room";
+                    string room_num = (floor < 10 ? "0" : "") + to_string(floor) + "0" + to_string(num), room_type = nor,room_member_num = sr;
                     int money = 0;
-                    if (floor > 20) { room_type = "luxurious"; }
-                    if (num > 5) { room_member_num = "double_room"; }
-                    money = room_type == "normal" ? money + 50 : money + 150;
-                    money = room_member_num == "single_room" ? money + 50 : money + 75;
+                    if (floor > 20) { room_type = lux; }
+                    if (num > 5) { room_member_num = dr; }
+                    money = room_type == nor ? money + 50 : money + 150;
+                    money = room_member_num == sr ? money + 50 : money + 75;
                     room_info_file << room_num << " " << room_type << " " << room_member_num << " " << to_string(money) << " " << "0" << endl;
                 }
             }
-            cout << "Room initialization was successful";el;
+            cout << "房间初始化成功";el;
             time_stop(300);
             clear_screen();
         }
@@ -237,7 +233,7 @@ class hotel_management_system : public running_func{
         //map初始化
         void initializes_the_hash_table() {
             //顾客
-            string cus_path = "./information/customer.txt";
+            string cus_path = "./information_zh/customer_zh.txt";
             fstream customer_file;
             customer_file.open(cus_path, ios::in);
             if (!customer_file.is_open()) { clear_screen();file_open_unsuccess(); }
@@ -255,7 +251,7 @@ class hotel_management_system : public running_func{
             customer_file.close();
 
             //管理员
-            string admin_path = "./information/administrator.txt";
+            string admin_path = "./information_zh/administrator_zh.txt";
             fstream admin_file;
             admin_file.open(admin_path, ios::in);
             if (!admin_file.is_open()) { clear_screen();file_open_unsuccess(); }
@@ -270,20 +266,20 @@ class hotel_management_system : public running_func{
             admin_file.close();
 
             //房间
-            string room_path = "./information/room_state.txt";
+            string room_path = "./information_zh/room_state_zh.txt";
             fstream room_file;
             room_file.open(room_path, ios::in);
             if (!room_file.is_open()) { clear_screen();file_open_unsuccess(); }
 
             string room_num, room_type, room_menber_num, room_price, is_book;
             while (room_file >> room_num >> room_type >> room_menber_num >> room_price >> is_book) {
-                if (room_state[room_num].empty()) {
-                    room_state[room_num] = vector<string>(4, "NULL");
+                if (room_state_zh[room_num].empty()) {
+                    room_state_zh[room_num] = vector<string>(4, "NULL");
                 }
-                room_state[room_num][0] = room_type;
-                room_state[room_num][1] = room_menber_num;
-                room_state[room_num][2] = room_price;
-                room_state[room_num][3] = is_book;
+                room_state_zh[room_num][0] = room_type;
+                room_state_zh[room_num][1] = room_menber_num;
+                room_state_zh[room_num][2] = room_price;
+                room_state_zh[room_num][3] = is_book;
             }
             room_file.close();
 
@@ -291,27 +287,27 @@ class hotel_management_system : public running_func{
 
         //清理文件
         void clear_file() {
-            string customer_path = "./information/customer.txt";
-            string admin_path = "./information/administrator.txt";
-            string room_path = "./information/room_state.txt";
+            string customer_path = "./information_zh/customer_zh.txt";
+            string admin_path = "./information_zh/administrator_zh.txt";
+            string room_path = "./information_zh/room_state_zh.txt";
 
             ofstream cus_file(customer_path, ios::trunc);
             if (!cus_file.is_open()) {
-                cerr << "Functions : clear_file !!!\n ERROR : Failed to open the file. \"customer.txt\"." << endl;
+                cerr << "函数运行错误 : clear_file !!!\n 错误：无法打开文件 \"customer_zh.txt\"." << endl;
                 return;
             }
             cus_file.close();
 
             ofstream admin_file(admin_path, ios::trunc);
             if (!admin_file.is_open()) {
-                cerr << "Functions : clear_file !!!\n ERROR : Failed to open the file \"administrator.txt\"." << endl;
+                cerr << "函数运行错误 : clear_file !!!\n 错误：无法打开文件 \"administrator_zh.txt\"." << endl;
                 return;
             }
             admin_file.close();
 
             ofstream room_info_file(room_path,ios::trunc);
             if (!room_info_file.is_open()) {
-                cerr << "Functions : save_information_to_file !!!\n ERROR : Failed to open the file. \"room_state.txt\"." << endl;
+                cerr << "函数运行错误 : save_information_to_file !!!\n 错误：无法打开文件 \"room_state_zh.txt\"." << endl;
                 return;
             }
             room_info_file.close();
@@ -320,13 +316,13 @@ class hotel_management_system : public running_func{
 
         //保存文件
         void save_information_to_file() {
-            string customer_path = "./information/customer.txt";
-            string admin_path = "./information/administrator.txt";
-            string room_path = "./information/room_state.txt";
+            string customer_path = "./information_zh/customer_zh.txt";
+            string admin_path = "./information_zh/administrator_zh.txt";
+            string room_path = "./information_zh/room_state_zh.txt";
 
             ofstream customer_info_file(customer_path, ios::out);
             if (!customer_info_file.is_open()) {
-                cerr << "Functions : save_information_to_file !!!\n ERROR : Failed to open the file. \"customer.txt\"." << endl;
+                cerr << "函数运行错误 : save_information_to_file !!!\n 错误：无法打开文件 \"customer_zh.txt\"." << endl;
                 return;
             }
             for (const auto& inf : customer_map) {
@@ -336,7 +332,7 @@ class hotel_management_system : public running_func{
 
             ofstream admin_info_file(admin_path, ios::out);
             if (!admin_info_file.is_open()) {
-                cerr << "Functions : save_information_to_file !!!\n ERROR : Failed to open the file \"administrator.txt\"." << endl;
+                cerr << "函数运行错误 : save_information_to_file !!!\n 错误：无法打开文件 \"administrator_zh.txt\"." << endl;
                 return;
             }
             for (const auto& inf : admin_map) {
@@ -346,10 +342,10 @@ class hotel_management_system : public running_func{
 
             ofstream room_info_file(room_path,ios::out);
             if (!room_info_file.is_open()) {
-                cerr << "Functions : save_information_to_file !!!\n ERROR : Failed to open the file. \"room_state.txt\"." << endl;
+                cerr << "函数运行错误 : save_information_to_file !!!\n 错误：无法打开文件 \"room_state_zh.txt\"." << endl;
                 return;
             }
-            for (const auto& inf : room_state) {
+            for (const auto& inf : room_state_zh) {
                 room_info_file << inf.first << " " << inf.second[0] << " " << inf.second[1] << " " << inf.second[2] << " " << inf.second[3] << endl;
             }
             room_info_file.close();
@@ -382,9 +378,9 @@ class hotel_management_system : public running_func{
             while (1)
             {
                 if(first_chioce != '1' and first_chioce != '2' and first_chioce != '3'){
-                    if(number_of_repeats < 3){cout<<"Wrong type! Please re-enter";el;}
-                    else if(number_of_repeats >= 3 and number_of_repeats < 7){cout<<"Knock it off"<< setfill('!') << setw(number_of_repeats)<<"!";el;}
-                    else {cout<<"Well, I'm done playing with you. Bye";el;break;}
+                    if(number_of_repeats < 3){cout<<"错误输入！请重新输入";el;}
+                    else if(number_of_repeats >= 3 and number_of_repeats < 7){cout<<"别闹"<< setfill('!') << setw(number_of_repeats)<<"!";el;}
+                    else {cout<<"哼~不和你玩了，再见";el;break;}
                     time_stop(200);
                     clear_screen();
                     number_of_repeats++;
@@ -400,7 +396,7 @@ class hotel_management_system : public running_func{
             }else if(first_chioce == '2'){
                 register_menu();
             }else if(first_chioce == '3'){
-                cout<<"Goodbye!";el;
+                cout<<"再见！";el;
             }
             exit_operation();
         }
@@ -424,7 +420,7 @@ class hotel_management_system : public running_func{
                 clear_screen();
                 main_menu();
             }else{
-                cout<<"Wrong type! Please re-enter";el;
+                cout<<"错误输入！请重新输入";el;
                     
                     time_stop(200);
                     clear_screen();
@@ -438,9 +434,9 @@ class hotel_management_system : public running_func{
             clear_screen();
             cout<<login_standing<<" login";el;
             cout << setfill('-') << setw(30) << "-" << setfill(' ') << endl;
-            cout<<"Please enter your name: ";cin>>name;el;
-            cout<<"Please enter your password: ";cin>>password;el;
-            cout<<"Confirm or Re-enter? (C/R)";el;
+            cout<<"请输入您的姓名：";cin>>name;el;
+            cout<<"请输入您的密码：";cin>>password;el;
+            cout<<"确认或重新输入？（C/R）";el;
             char reenter_choice;
             cin>>reenter_choice;
             
@@ -450,17 +446,17 @@ class hotel_management_system : public running_func{
                 entry_of_login_information(login_standing);
             }else if (reenter_choice == 'C' or reenter_choice == 'c'){
                 clear_screen();
-                cout<<"Please wait for a moment.....";el;
+                cout<<"请稍等片刻.....";el;
                 confirm_success = confirm_login_information(login_standing);
             }else{
                 clear_screen();
-                cout<<"Wrong type!\nWill return to the login interface.";el;
+                cout<<"错误输入！\n将返回到登录界面。";el;
                 time_stop(200);
                 login_menu();
             }
 
             if(confirm_success){
-                cout<<"Login successful!";el;
+                cout<<"登录成功！";el;
                 time_stop(200);
                 clear_screen();
                 if(login_standing == admin){admin_operation();}
@@ -495,7 +491,8 @@ class hotel_management_system : public running_func{
             if (found) {
                 return true;
             } else {
-                cout << "Invalid name or password. Please try again." << endl;
+                cout << "无效的用户名或密码。请再试一次。" << endl;
+                time_stop(500);
                 return false;
             }
         }
@@ -523,9 +520,9 @@ class hotel_management_system : public running_func{
                 clear_screen();
                 main_menu();
             }else{
-                if(number_of_repeats < 3){cout<<"Wrong type! Please re-enter";el;}
-                    else if(number_of_repeats >= 3 and number_of_repeats < 7){cout<<"Knock it off"<< setfill('!') << setw(number_of_repeats)<<"!";el;}
-                    else {cout<<"Well, I'm done playing with you. Bye";el;exit(0);}
+                if(number_of_repeats < 3){cout<<"错误输入！请重新输入";el;}
+                    else if(number_of_repeats >= 3 and number_of_repeats < 7){cout<<"别闹"<< setfill('!') << setw(number_of_repeats)<<"!";el;}
+                    else {cout<<"哼~不和你玩了，再见";exit_operation();}
                     time_stop(200);
                     clear_screen();
                     number_of_repeats++;
@@ -537,11 +534,11 @@ class hotel_management_system : public running_func{
         //注册信息输入菜单
         void entry_of_register_information(string register_standing){
             clear_screen();
-            cout<<register_standing<<" register";el;
+            cout<<register_standing<<" 注册";el;
             cout << setfill('-') << setw(30) << "-" << setfill(' ') << endl;
-            cout<<"Please enter your name: ";cin>>name;el;
-            cout<<"Please enter your password: ";cin>>password;el;
-            cout<<"Confirm or Re-enter? (C/R)";el;
+            cout<<"请输入您的姓名：";cin>>name;el;
+            cout<<"请输入您的密码：";cin>>password;el;
+            cout<<"确认或重新输入？（C/R）";el;
             char reenter_choice;
             cin>>reenter_choice;
 
@@ -553,10 +550,10 @@ class hotel_management_system : public running_func{
                 main_menu();
             }else if (reenter_choice == 'C' or reenter_choice == 'c'){
                 clear_screen();
-                cout<<"Please wait for a moment.....";el;
+                cout<<"请稍等片刻.....";el;
                 register_success = confirm_register_information(register_standing);
             }else{
-                cout<<"Wrong type!\nWill return to the main menu.";el;
+                cout<<"错误输入！\n将返回主菜单。";el;
                 time_stop(200);
                 clear_screen();
                 main_menu();
@@ -565,7 +562,7 @@ class hotel_management_system : public running_func{
             //注册是否成功
             if(register_success == false){entry_of_register_information(register_standing);}
             else{
-                cout<<"Return to the corresponding main menu after 2 seconds......";el;
+                cout<<"2秒后返回到主菜单......";el;
                 time_stop(2000);
                 save_all_file();
                 clear_screen();
@@ -595,7 +592,7 @@ class hotel_management_system : public running_func{
             }
 
             if (!found) {
-                cout << "The name already exists. Please try a different name." << endl;
+                cout << "该名称已存在。请尝试其他名称。" << endl;
                 save_all_file();
                 return false;
             } else {
@@ -616,20 +613,20 @@ class hotel_management_system : public running_func{
 
         //充值
         void recharge_balance_operation(int money) {
-            cout<<"Processing, please wait......";el;
+            cout<<"处理中，请稍候......";el;
             string temp = customer_map[name][1];
             int current_money = string_to_int(temp);
             int new_money = current_money + money;
             customer_map[name][1] = to_string(new_money);
             time_stop(500);
-            cout << "Recharge successfully!";el;
+            cout << "充值成功！";el;
             return;
         }
 
         void recharge_balance(){
             save_all_file();
             clear_screen();
-            cout<<"Please enter the recharge amount:";
+            cout<<"请输入充值金额：";
             int money;cin>>money;
             recharge_balance_operation(money);
             save_all_file();
@@ -641,10 +638,10 @@ class hotel_management_system : public running_func{
             string show_name = choice_name;
             string show_balance = customer_map[show_name][1];
             cout<<"+-----------------------";el;
-            cout<<"| customer : "<<show_name;el;
-            cout<<"| balance : "<<show_balance;el;
+            cout<<"| 顾客 : "<<show_name;el;
+            cout<<"| 余额 : "<<show_balance;el;
             cout<<"+-----------------------";el;
-            cout << "Enter any letter to return";el;
+            cout << "输入任意字母返回";el;
             string cin1;cin >> cin1;
             clear_screen();
             customer_operation(); 
@@ -659,11 +656,11 @@ class hotel_management_system : public running_func{
                 show_room = customer_map[show_name][2],
                 show_room_level = customer_map[show_name][3];
             cout << "+-------------------------------";el;
-            cout << "| customer : "<<show_name;el;
-            cout << "| password : "<<show_password;el;
-            cout << "| balance : "<<show_money;el;
-            cout << "| room : "<<show_room;el;
-            cout << "| room level : "<<show_room_level;el;
+            cout << "| 顾客 : "<<show_name;el;
+            cout << "| 密码 : "<<show_password;el;
+            cout << "| 余额 : "<<show_money;el;
+            cout << "| 房间 : "<<show_room;el;
+            cout << "| 房间类型 : "<<show_room_level;el;
             cout << "+-------------------------------";el;
         }
 
@@ -679,11 +676,11 @@ class hotel_management_system : public running_func{
                 show_customer_personal_information(name);
             }
             else if (user == admin and controls == 0) {//管理员选择查看某人
-                cout << "Enter the user you want to find : ";
+                cout << "请输入您要查找的用户：";
                 string cin_name;cin >> name;
                 if (customer_map[cin_name].empty()) {
-                    cout << "The user cannot be found, please re-enter!";el;
-                    time_stop(500);
+                    cout << "找不到用户，请重新输入！";el;
+                    time_stop(1000);
                     clear_screen();
                     admin_or_customer_show(user, controls);
                 }
@@ -693,11 +690,11 @@ class hotel_management_system : public running_func{
                 }
             }
             else {
-                cout << "Wrong operation, please contact the author of https://github.com/gqjason The program will be closed after a while.";el;
+                cout << "操作错误，请联系 https://github.com/gqjason 。\n程序将在稍后关闭。";el;
                 time_stop(500);
                 exit_operation();
             }
-            cout << "Enter any letter to return";el;
+            cout << "输入任意字母返回";el;
             string cin1;cin >> cin1;
             clear_screen();
             if (user == admin) { admin_operation(); }
@@ -708,18 +705,18 @@ class hotel_management_system : public running_func{
         void admin_check(){
             save_all_file();
             clear_screen();
-            cout<<"Select group";el;
+            cout<<"选择对象";el;
             cout<<"-------------------";el;
-            cout<<"1. Select (enter name)";el;
-            cout<<"2. Everyone";el;
-            cout<<"3. EXIT";el;
+            cout<<"1. 选择（输入名字）";el;
+            cout<<"2. 所有人";el;
+            cout<<"3. 退出";el;
             cout<<"-------------------";el;
-            cout<<"Please enter an option (1/2)";el;
+            cout<<"请输入一个选项（1/2）";el;
             char choice_option;cin>>choice_option;
             int control = stoi(string(1, choice_option))-1;
             if(control == 2){admin_operation();}
             if(control != 0 and control != 1){
-                cout<<"Incorrect input, please re-enter";el;
+                cout<<"输入错误，请重新输入";el;
                 time_stop(1000);clear_screen();
                 admin_check();
             }
@@ -730,16 +727,16 @@ class hotel_management_system : public running_func{
         //查房
         void check_room_state(string choice_room_num){
             string crn = choice_room_num;
-            string c_room_type = room_state[crn][0],
-                c_room_menber_num = room_state[crn][1],
-                c_room_price = room_state[crn][2],
-                c_room_is_book = room_state[crn][3] == "0"?"NO" : "YES";
+            string c_room_type = room_state_zh[crn][0],
+                c_room_menber_num = room_state_zh[crn][1],
+                c_room_price = room_state_zh[crn][2],
+                c_room_is_book = room_state_zh[crn][3] == "0"?"NO" : "YES";
             cout <<"+-------------------------------";el;
-            cout<<"| Room number : "<<crn;el;
-            cout<<"| Room type : "<<c_room_type;el;
-            cout<<"| Number of people in room : "<<c_room_menber_num;el;
-            cout<<"| Room price : "<<c_room_price;el;
-            cout<<"| Is the room booked : "<<c_room_is_book;el;
+            cout<<"| 房间号 : "<<crn;el;
+            cout<<"| 房间类型 : "<<c_room_type;el;
+            cout<<"| 房间床数 : "<<c_room_menber_num;el;
+            cout<<"| 房间价格 : "<<c_room_price;el;
+            cout<<"| 房间是否预订 : "<<c_room_is_book;el;
             cout <<"+-------------------------------";el;
         }
 
@@ -747,19 +744,19 @@ class hotel_management_system : public running_func{
         void view_room_type_options(string types,string member,int book_state){
             save_all_file();
             if(book_state == 0){
-                for(const auto& inf:room_state){
+                for(const auto& inf:room_state_zh){
                     if(inf.second[0] == types and inf.second[1] == member and inf.second[3] == "0"){
                         check_room_state(inf.first);
                     }
                 }
             }else if(book_state == 1){
-                for(const auto& inf:room_state){
+                for(const auto& inf:room_state_zh){
                     if(inf.second[0] == types and inf.second[1] == member and inf.second[3] == "1"){
                         check_room_state(inf.first);
                     }
                 }
             }else{
-                for(const auto& inf:room_state){
+                for(const auto& inf:room_state_zh){
                     if(inf.second[0] == types and inf.second[1] == member){
                         check_room_state(inf.first);
                     }
@@ -770,19 +767,19 @@ class hotel_management_system : public running_func{
         void view_room_options(int book_state){
             save_all_file();
             if(book_state == 0){
-                for(const auto& inf:room_state){
+                for(const auto& inf:room_state_zh){
                     if(inf.second[3] == "0"){
                         check_room_state(inf.first);
                     }
                 }
             }else if(book_state == 1){
-                for(const auto& inf:room_state){
+                for(const auto& inf:room_state_zh){
                     if(inf.second[3] == "1"){
                         check_room_state(inf.first);
                     }
                 }
             }else{
-                for(const auto& inf:room_state){
+                for(const auto& inf:room_state_zh){
                     check_room_state(inf.first);
                 }
             }
@@ -803,12 +800,12 @@ class hotel_management_system : public running_func{
                 else if(standing == cus){customer_operation();}
             }
             else {
-                cout<<"Error input! ! !";el;
+                cout<<"错误输入！！！";el;
                 time_stop(500);clear_screen();
                 check_room_frist_menu(standing);
             }
             check_room_second_menu(standing,type,cnt);
-            cout << "Enter any letter to return";el;
+            cout << "输入任意字母返回";el;
             string cin1;cin >> cin1;
             clear_screen();
             if (standing == admin) { admin_operation(); }
@@ -841,21 +838,21 @@ class hotel_management_system : public running_func{
         void delete_customers(){
             save_all_file();
             clear_screen();
-            cout<<"Please customer name : ";el;
+            cout<<"请输入顾客姓名：";el;
             string choice_name;cin>>choice_name;
             if(customer_map[choice_name].empty()){
-                cout<<"Sorry, the customer was not found.";el;
+                cout<<"对不起，未找到对应顾客。";el;
                 time_stop(1000);
                 clear_screen();
                 admin_operation();
             }else{
                 string room_number = customer_map[choice_name][2];
-                if(room_number != "NULL"){room_state[room_number][3] = "0";}
+                if(room_number != "NULL"){room_state_zh[room_number][3] = "0";}
                 customer_map.erase(choice_name);
-                cout<<"Customer has been successfully deleted";el;
+                cout<<"顾客已成功删除";el;
             }
             save_all_file();
-            cout<<"Continue deleting customers?(Y/N)";el;
+            cout<<"继续删除顾客？(Y/N)";el;
             char is_continue;cin>>is_continue;
             if(is_continue == 'Y' or is_continue == 'y'){
                 clear_screen();
@@ -882,7 +879,7 @@ class hotel_management_system : public running_func{
             }
             else if(choice_type == '7'){admin_operation();}
             else {
-                cout<<"Error input! ! !";el;
+                cout<<"错误输入! ! !";el;
                 time_stop(500);clear_screen();
                 management_room_is_available_frist_menu();
             }
@@ -893,9 +890,9 @@ class hotel_management_system : public running_func{
             save_all_file();
             vector<string>room_numbers;
             if(type == "NULL" and type == "NULL"){
-                for(const auto&inf:room_state){room_numbers.emplace_back(inf.first);}
+                for(const auto&inf:room_state_zh){room_numbers.emplace_back(inf.first);}
             }else if(type == "choice" and type == "choice"){
-                cout<<"Please enter the room number and enter y or y to end :";el;
+                cout<<"请输入房间号并输入 y 或 Y 结束：";el;
                 string room_num_input = "NO";
                 while (room_num_input != "y" or room_num_input != "Y")
                 {
@@ -904,7 +901,7 @@ class hotel_management_system : public running_func{
                 }
                 if(room_numbers.back() == "y" or room_numbers.back() == "Y"){room_numbers.pop_back();}
             }else{
-                for(const auto&inf:room_state){
+                for(const auto&inf:room_state_zh){
                     if(inf.second[0] == type and inf.second[1] == cnt){room_numbers.emplace_back(inf.first);}
                 }
             }
@@ -915,13 +912,13 @@ class hotel_management_system : public running_func{
             else if(choice_state  == 3){choice_state = 2;}
             else if(choice_state == 4){management_room_is_available_frist_menu();}
             else {
-                cout<<"Error input! ! !";el;
+                cout<<"输入错误！！！";el;
                 time_stop(500);clear_screen();
                 management_room_is_available_second_menu(type,cnt);
             }
             change_room_state(room_numbers,choice_state);
 
-            cout<<"Continue to change?(Y/N)";el;
+            cout<<"继续更改？(Y/N)";el;
             char is_continue;cin>>is_continue;
             if(is_continue == 'Y' or is_continue == 'y'){
                 clear_screen();
@@ -933,24 +930,24 @@ class hotel_management_system : public running_func{
         //改变房间状态
         void change_room_state(const vector<string>& room_nums,const int operation){
             for(const auto&rn:room_nums){
-                if(!room_state[rn].empty()){
+                if(!room_state_zh[rn].empty()){
                     if(operation == 2){
-                        room_state[rn][3] = room_state[rn][3]=="0"?"1":"0";
+                        room_state_zh[rn][3] = room_state_zh[rn][3]=="0"?"1":"0";
                     }else{
-                        room_state[rn][3] = to_string(operation);
+                        room_state_zh[rn][3] = to_string(operation);
                     }
                 }
             }
             save_all_file();
-            cout<<"Change successful";el;
+            cout<<"更改成功";el;
         }
 
 
         //订房
         void booking_room_first_menu(){
             save_all_file();
-            cout<<"Please select the room type you want to book.";el;
-            cout<<"your balance : "<<customer_map[name][1];el;
+            cout<<"请选择您要预订的房间类型。";el;
+            cout<<"您的余额："<<customer_map[name][1];el;
             show_book_room_first_menu();
             string type = nor,cnt = sr;
             char choice_type;cin>>choice_type;
@@ -961,7 +958,7 @@ class hotel_management_system : public running_func{
             else if(choice_type == '5'){type = "NULL",cnt = "NULL";}
             else if(choice_type == '6'){customer_operation();}
             else {
-                cout<<"Error input! ! !";el;
+                cout<<"错误输入！！！";el;
                 time_stop(500);clear_screen();
                 booking_room_first_menu();
             }
@@ -975,14 +972,14 @@ class hotel_management_system : public running_func{
         //展示可预订的房间
         void show_available_rooms(string type,string cnt){
             if(type == "NULL" and cnt == "NULL"){
-                for(const auto&inf:room_state){
-                    if(room_state[inf.first][3] == "0"){
+                for(const auto&inf:room_state_zh){
+                    if(room_state_zh[inf.first][3] == "0"){
                         check_room_state(inf.first);
                     }
                 }
             }else{
-                for(const auto&inf:room_state){
-                    if(inf.second[0] == type and inf.second[1] == cnt and room_state[inf.first][3] == "0"){
+                for(const auto&inf:room_state_zh){
+                    if(inf.second[0] == type and inf.second[1] == cnt and room_state_zh[inf.first][3] == "0"){
                         check_room_state(inf.first);
                     }
                 }
@@ -992,29 +989,29 @@ class hotel_management_system : public running_func{
         void input_room_number_processing(){
             save_all_file();
             string room_num;
-            cout<<"Enter the room number to book(Enter 1 to exit) : ";
+            cout<<"请输入房间号进行预订（输入1退出）：";
             cin>>room_num;
             if(room_num == "1"){booking_room_first_menu();}
-            if(room_state[room_num].empty()){
-                cout<<"The room does not exist.";el;
+            if(room_state_zh[room_num].empty()){
+                cout<<"房间不存在。";el;
                 time_stop(500);
                 input_room_number_processing();
-            }else if(room_state[room_num][3] == "1"){
-                cout<<"The room has been booked.";el;
+            }else if(room_state_zh[room_num][3] == "1"){
+                cout<<"房间已经预订了。";el;
             }else {
-                int room_charge = string_to_int(room_state[room_num][2]);
-                string type = room_state[room_num][0],cnt = room_state[room_num][1];
+                int room_charge = string_to_int(room_state_zh[room_num][2]);
+                string type = room_state_zh[room_num][0],cnt = room_state_zh[room_num][1];
                 if(!deduction_balance(room_charge)){
                     time_stop(500);clear_screen();
                     booking_room_first_menu();
                 }else{
                     string origin_room_num = customer_map[name][2];
-                    string room_level = type + "_" + cnt;
-                    room_state[room_num][3] = "1";
+                    string room_level = type + cnt;
+                    room_state_zh[room_num][3] = "1";
                     customer_map[name][3] = room_level;
                     customer_map[name][2] = room_num;
-                    if(!room_state[origin_room_num].empty()){room_state[origin_room_num][3] = "0";}
-                    cout<<"Booking successful!";el;
+                    if(!room_state_zh[origin_room_num].empty()){room_state_zh[origin_room_num][3] = "0";}
+                    cout<<"预订成功！";el;
                 }
             }
             save_all_file();
@@ -1026,7 +1023,7 @@ class hotel_management_system : public running_func{
             string temp = customer_map[name][1];
             int current_money = string_to_int(temp);
             if (current_money < money) {
-                cout << "The balance is insufficient, please top up!";el;
+                cout << "余额不足，请充值！";el;
                 return false;
             }
             int new_money = current_money - money;
@@ -1039,7 +1036,7 @@ class hotel_management_system : public running_func{
         void user_check_out(){
             save_all_file();
             if(customer_map[name][2] == "NULL" and customer_map[name][3] == "NULL"){
-                cout<<"You have no room to return.\nReturning to the customer menu in 1 second.";el;
+                cout<<"你没有房间可退订。\n1秒后返回到顾客主菜单。";el;
                 time_stop(1000);
                 clear_screen();
                 customer_operation();
@@ -1050,8 +1047,8 @@ class hotel_management_system : public running_func{
             if(choice_option == '1'){
                 string room_number = customer_map[name][2];
                 customer_map[name][2] = "NULL" , customer_map[name][3] = "NULL";
-                room_state[room_number][3] = "0";
-                cout<<"Check-out successful!";el;
+                room_state_zh[room_number][3] = "0";
+                cout<<"退订成功！";el;
                 time_stop(1000);
                 clear_screen();
                 save_all_file();
@@ -1078,7 +1075,7 @@ class hotel_management_system : public running_func{
                 else if(choice_option == '4'){clear_screen();delete_customers();}
                 else if(choice_option == '5'){clear_screen();clear_screen();main_menu();}
                 else {
-                    cout<<"Error input! ! !";el;
+                    cout<<"错误输入！！！";el;
                     time_stop(500);clear_screen();
                     admin_operation();
                 }
@@ -1100,7 +1097,7 @@ class hotel_management_system : public running_func{
                 else if(choice_option == '6'){clear_screen();admin_or_customer_show(cus, 0);}
                 else if(choice_option == '7'){clear_screen();clear_screen();main_menu();}
                 else {
-                    cout<<"Error input! ! !";el;
+                    cout<<"错误输入！！！";el;
                     time_stop(500);clear_screen();
                     customer_operation();
                 }
@@ -1115,22 +1112,22 @@ class hotel_management_system : public running_func{
     int main() {
         hotel_management_system hms;
         //检测文件是否存在
-        if(_access("information", 0) == -1)  
-        {  _mkdir("information");}  
+        if(_access("information_zh", 0) == -1)  
+        {  _mkdir("information_zh");}  
 
-        if(_access("./information/customer.txt", 0) == -1)  
+        if(_access("./information_zh/customer_zh.txt", 0) == -1)  
         {   
-            ofstream ouf("./information/customer.txt");
+            ofstream ouf("./information_zh/customer_zh.txt");
         }  
 
-        if(_access("./information/administrator.txt", 0) == -1)  
+        if(_access("./information_zh/administrator_zh.txt", 0) == -1)  
         {  
-            ofstream ouf("./information/administrator.txt"); 
+            ofstream ouf("./information_zh/administrator_zh.txt"); 
         }  
 
-        if (_access("./information/room_state.txt", 0) == -1)
+        if (_access("./information_zh/room_state_zh.txt", 0) == -1)
         {
-            ofstream ouf("./information/room_state.txt");
+            ofstream ouf("./information_zh/room_state_zh.txt");
             hms.room_initialization();
         }
 
