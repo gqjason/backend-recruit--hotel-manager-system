@@ -81,7 +81,7 @@ public:
         cout<<"3. ";cout<<"";el;
 
     }
-
+    //顾客界面
     void show_customer_first_menu(string customer_name){
         cout<<"Welcome back, Administrator "<<customer_name<<" .";el;
         cout << setfill('-') << setw(30) << "-" << setfill(' ') << endl;
@@ -89,6 +89,52 @@ public:
         cout<<"2. ";cout<<"";el;
         cout<<"3. ";cout<<"";el;
         cout<<"4. ";cout<<"";el;
+    }
+    //查询房间（类型）
+    void show_the_query_room_status_menu_type(){
+        cout << setfill('-') << setw(30) << "-" << setfill(' ') << endl;
+        cout<<"1. Single common room";el;
+        cout<<"2. Single deluxe room";el;
+        cout<<"3. Double common room";el;
+        cout<<"4. Double Deluxe Room";el;
+        cout<<"5. all";el;
+        cout<<"6. exit";el;
+        cout << setfill('-') << setw(30) << "-" << setfill(' ') << endl;
+        cout<<"Please enter options (1/2/3/4/5/6)";el;
+    }
+    //查询房间（状态）
+    void show_the_query_room_book_status_menu(){
+        cout << setfill('-') << setw(30) << "-" << setfill(' ') << endl;
+        cout<<"1. Booked";el;
+        cout<<"2. Not booked";el;
+        cout<<"3. all";el;
+        cout<<"4. exit";el;
+        cout << setfill('-') << setw(30) << "-" << setfill(' ') << endl;
+        cout<<"Please enter options (1/2/3/4)";el;
+    }
+    //管理房间类型
+    void show_room_is_available_menu_type(){
+        cout << setfill('-') << setw(30) << "-" << setfill(' ') << endl;
+        cout<<"1. Single common room";el;
+        cout<<"2. Single deluxe room";el;
+        cout<<"3. Double common room";el;
+        cout<<"4. Double Deluxe Room";el;
+        cout<<"5. all";el;
+        cout<<"6. Enter a specific room number";el;
+        cout<<"7. exit";el;
+        cout << setfill('-') << setw(30) << "-" << setfill(' ') << endl;
+        cout<<"Please enter options (1/2/3/4/5/6/7)";el;
+    }
+    //管理房间是否可用
+    void show_room_is_available_room_book_status_menu(){
+        cout<<"What state do you want to convert these rooms into?";el;
+        cout << setfill('-') << setw(30) << "-" << setfill(' ') << endl;
+        cout<<"1. Booked";el;
+        cout<<"2. Not booked";el;
+        cout<<"3. exchange";el;
+        cout<<"4. exit";el;
+        cout << setfill('-') << setw(30) << "-" << setfill(' ') << endl;
+        cout<<"Please enter options (1/2/3/4)";el;
     }
 
     string cut_str(string s){
@@ -154,7 +200,8 @@ class hotel_management_system : public running_func{
             time_stop(300);
             clear_screen();
         }
-
+        
+        //map初始化
         void initializes_the_hash_table() {
             //顾客
             string cus_path = "./information/customer.txt";
@@ -213,24 +260,37 @@ class hotel_management_system : public running_func{
         void clear_file() {
             string customer_path = "./information/customer.txt";
             string admin_path = "./information/administrator.txt";
+            string room_path = "./information/room_state.txt";
+
             ofstream cus_file(customer_path, ios::trunc);
             if (!cus_file.is_open()) {
                 cerr << "Functions : clear_file !!!\n ERROR : Failed to open the file. \"customer.txt\"." << endl;
                 return;
             }
             cus_file.close();
+
             ofstream admin_file(admin_path, ios::trunc);
             if (!admin_file.is_open()) {
                 cerr << "Functions : clear_file !!!\n ERROR : Failed to open the file \"administrator.txt\"." << endl;
                 return;
             }
             admin_file.close();
+
+            ofstream room_info_file(room_path,ios::trunc);
+            if (!room_info_file.is_open()) {
+                cerr << "Functions : save_information_to_file !!!\n ERROR : Failed to open the file. \"room_state.txt\"." << endl;
+                return;
+            }
+            room_info_file.close();
+
         }
 
-        //输入文件
+        //保存文件
         void save_information_to_file() {
             string customer_path = "./information/customer.txt";
             string admin_path = "./information/administrator.txt";
+            string room_path = "./information/room_state.txt";
+
             ofstream customer_info_file(customer_path, ios::out);
             if (!customer_info_file.is_open()) {
                 cerr << "Functions : save_information_to_file !!!\n ERROR : Failed to open the file. \"customer.txt\"." << endl;
@@ -240,6 +300,7 @@ class hotel_management_system : public running_func{
                 customer_info_file << inf.first << " " << inf.second[0] << " " << inf.second[1] << " " << inf.second[2] << " " << inf.second[3] << endl;
             }
             customer_info_file.close();
+
             ofstream admin_info_file(admin_path, ios::out);
             if (!admin_info_file.is_open()) {
                 cerr << "Functions : save_information_to_file !!!\n ERROR : Failed to open the file \"administrator.txt\"." << endl;
@@ -249,6 +310,16 @@ class hotel_management_system : public running_func{
                 admin_info_file << inf.first << " " << inf.second << endl;
             }
             admin_info_file.close();
+
+            ofstream room_info_file(room_path,ios::out);
+            if (!room_info_file.is_open()) {
+                cerr << "Functions : save_information_to_file !!!\n ERROR : Failed to open the file. \"room_state.txt\"." << endl;
+                return;
+            }
+            for (const auto& inf : room_state) {
+                room_info_file << inf.first << " " << inf.second[0] << " " << inf.second[1] << " " << inf.second[2] << " " << inf.second[3] << endl;
+            }
+            room_info_file.close();
         }
 
         //退出程序
@@ -258,6 +329,11 @@ class hotel_management_system : public running_func{
             time_stop(100);
             clear_screen();
             exit(0);
+        }
+
+        void save_all_file(){
+            clear_file();
+            save_information_to_file();
         }
 
         //主菜单
@@ -452,6 +528,7 @@ class hotel_management_system : public running_func{
             else{
                 cout<<"Return to the corresponding login interface after 2 seconds......";el;
                 time_stop(2000);
+                save_all_file();
                 clear_screen();
                 entry_of_login_information(register_standing);
             }
@@ -495,6 +572,7 @@ class hotel_management_system : public running_func{
             }
         }
 
+
         //使用界面
             //管理者
         void admin_operation(){
@@ -506,6 +584,7 @@ class hotel_management_system : public running_func{
         void customer_operation(){
             show_customer_first_menu(name);
         }
+
 
         //充值
         void recharge_balance(int money) {
@@ -533,9 +612,10 @@ class hotel_management_system : public running_func{
             return true;
         }
 
+
         //显示个人信息
         void show_customer_personal_information(string choice_name) {
-            string show_name = name;
+            string show_name = choice_name;
             string show_password = customer_map[show_name][0],
                 show_money = customer_map[show_name][1],
                 show_room = customer_map[show_name][2],
@@ -550,15 +630,15 @@ class hotel_management_system : public running_func{
         }
 
         void admin_or_customer_show(string user, int controls) {
-            if (controls == 1 and user == admin) {
+            if (controls == 1 and user == admin) {//管理员查看所有人
                 for (const auto& all_inf : customer_map) {
                     show_customer_personal_information(all_inf.first);
                 }
             }
-            else if (user == cus and controls == 0) {
+            else if (user == cus and controls == 0) {//顾客查看自己
                 show_customer_personal_information(name);
             }
-            else if (user == admin and controls == 0) {
+            else if (user == admin and controls == 0) {//管理员选择查看某人
                 cout << "Enter the user you want to find : ";
                 string cin_name;cin >> name;
                 if (customer_map[cin_name].empty()) {
@@ -582,6 +662,214 @@ class hotel_management_system : public running_func{
             clear_screen();
             if (user == admin) { admin_operation(); }
             else { customer_operation(); }
+        }
+
+
+        //查房
+        void check_room_state(string choice_room_num){
+            string crn = choice_room_num;
+            string c_room_type = room_state[crn][0],
+                c_room_menber_num = room_state[crn][1],
+                c_room_price = room_state[crn][2],
+                c_room_is_book = room_state[crn][3] == "0"?"NO" : "YES";
+            cout <<"+-------------------------------";el;
+            cout<<"| Room number : "<<crn;el;
+            cout<<"| Room type : "<<c_room_type;el;
+            cout<<"| Number of people in room : "<<c_room_menber_num;el;
+            cout<<"| Room price : "<<c_room_price;el;
+            cout<<"| Is the room booked : "<<c_room_is_book;el;
+            cout <<"+-------------------------------";el;
+        }
+
+        //选择房间类型
+        void view_room_type_options(string types,string member,int book_state){
+            if(book_state == 0){
+                for(const auto& inf:room_state){
+                    if(inf.second[0] == types and inf.second[1] == member and inf.second[3] == "0"){
+                        check_room_state(inf.first);
+                    }
+                }
+            }else if(book_state == 1){
+                for(const auto& inf:room_state){
+                    if(inf.second[0] == types and inf.second[1] == member and inf.second[3] == "1"){
+                        check_room_state(inf.first);
+                    }
+                }
+            }else{
+                for(const auto& inf:room_state){
+                    if(inf.second[0] == types and inf.second[1] == member){
+                        check_room_state(inf.first);
+                    }
+                }
+            }
+        }
+        //不选择房间类型
+        void view_room_options(int book_state){
+            if(book_state == 0){
+                for(const auto& inf:room_state){
+                    if(inf.second[3] == "0"){
+                        check_room_state(inf.first);
+                    }
+                }
+            }else if(book_state == 1){
+                for(const auto& inf:room_state){
+                    if(inf.second[3] == "1"){
+                        check_room_state(inf.first);
+                    }
+                }
+            }else{
+                for(const auto& inf:room_state){
+                    check_room_state(inf.first);
+                }
+            }
+        }
+        //选择房间类型
+        void check_room_frist_menu(string standing){
+            show_the_query_room_book_status_menu();
+            string type = nor,cnt = sr;
+            char choice_type;cin>>choice_type;
+            if(choice_type == '1'){type = nor,cnt = sr;}
+            else if(choice_type == '2'){type = nor,cnt = dr;}
+            else if(choice_type  == '3'){type = lux,cnt = sr;}
+            else if(choice_type == '4'){type = lux,cnt = sr;}
+            else if(choice_type == '5'){type = "NULL",cnt = "NULL";}
+            else if(choice_type == '6'){
+                if(standing == admin){admin_operation();}
+                else if(standing == cus){customer_operation();}
+            }
+            else {
+                cout<<"Error input! ! !";el;
+                time_stop(500);clear_screen();
+                check_room_frist_menu(standing);
+            }
+            check_room_second_menu(standing,type,cnt);
+            cout << "Enter any letter to return";el;
+            string cin1;cin >> cin1;
+            clear_screen();
+            if (standing == admin) { admin_operation(); }
+            else { customer_operation(); }
+        }
+        //选择房间状态
+        void check_room_second_menu(string standing,string type,string cnt){
+            show_the_query_room_status_menu_type();
+            int choice_state = 2;cin>>choice_state;
+            if(choice_state == '1'){choice_state = 0;}
+            else if(choice_state == '2'){choice_state = 1;}
+            else if(choice_state  == '3'){choice_state = 2;}
+            else if(choice_state == '4'){
+                if(standing == admin){admin_operation();}
+                else if(standing == cus){customer_operation();}
+            }
+            else {
+                cout<<"Error input! ! !";el;
+                time_stop(500);clear_screen();
+                check_room_second_menu(standing,type,cnt);
+            }
+            if(type == "NULL" and cnt == "NULL"){view_room_options(choice_state);}
+            else {view_room_type_options(type,cnt,choice_state);}
+        }
+
+
+        //删除顾客
+        void delete_customers(){
+            string choice_name;cin>>choice_name;
+            if(customer_map[choice_name].empty()){
+                cout<<"Sorry, the customer was not found.";el;
+                time_stop(1000);
+                clear_screen();
+                admin_operation();
+            }else{
+                string room_number = customer_map[choice_name][2];
+                if(room_number != "NULL"){room_state[room_number][3] = "0";}
+                customer_map.erase(choice_name);
+                cout<<"Customer has been successfully deleted";el;
+            }
+            save_all_file();
+            cout<<"Continue deleting customers?(Y/N)";el;
+            char is_continue;cin>>is_continue;
+            if(is_continue == 'Y' or is_continue == 'y'){
+                clear_screen();
+                delete_customers();
+            }else{
+                admin_operation();
+            }
+        }
+
+
+        //管理房间是否可用
+        void management_room_is_available_frist_menu(){
+            show_room_is_available_menu_type();
+            string type = nor,cnt = sr;
+            char choice_type;cin>>choice_type;
+            if(choice_type == '1'){type = nor,cnt = sr;}
+            else if(choice_type == '2'){type = nor,cnt = dr;}
+            else if(choice_type  == '3'){type = lux,cnt = sr;}
+            else if(choice_type == '4'){type = lux,cnt = sr;}
+            else if(choice_type == '5'){type = "NULL",cnt = "NULL";}
+            else if(choice_type == '6'){
+                type = "choice",cnt = "choice";
+            }
+            else if(choice_type == '7'){admin_operation();}
+            else {
+                cout<<"Error input! ! !";el;
+                time_stop(500);clear_screen();
+                management_room_is_available_frist_menu();
+            }
+        }
+
+        void management_room_is_available_second_menu(string type,string cnt){
+            vector<string>room_numbers;
+            if(type == "NULL" and type == "NULL"){
+                for(const auto&inf:room_state){room_numbers.emplace_back(inf.first);}
+            }else if(type == "choice" and type == "choice"){
+                cout<<"Please enter the room number and enter y or y to end :";el;
+                string room_num_input = "NO";
+                while (room_num_input != "y" or room_num_input != "Y")
+                {
+                    cin>>room_num_input;
+                    room_numbers.emplace_back(room_num_input);
+                }
+                if(room_numbers.back() == "y" or room_numbers.back() == "Y"){room_numbers.pop_back();}
+            }else{
+                for(const auto&inf:room_state){
+                    if(inf.second[0] == type and inf.second[1] == cnt){room_numbers.emplace_back(inf.first);}
+                }
+            }
+            show_the_query_room_status_menu_type();
+            int choice_state = 2;cin>>choice_state;
+            if(choice_state == '1'){choice_state = 0;}
+            else if(choice_state == '2'){choice_state = 1;}
+            else if(choice_state  == '3'){choice_state = 2;}
+            else if(choice_state == '4'){management_room_is_available_frist_menu();}
+            else {
+                cout<<"Error input! ! !";el;
+                time_stop(500);clear_screen();
+                management_room_is_available_second_menu(type,cnt);
+            }
+
+
+            cout<<"Continue to change?(Y/N)";el;
+            char is_continue;cin>>is_continue;
+            if(is_continue == 'Y' or is_continue == 'y'){
+                clear_screen();
+                management_room_is_available_frist_menu();
+            }else{
+                admin_operation();
+            }
+        }
+
+        void change_room_state(const vector<string>& room_nums,const int operation){
+            for(const auto&rn:room_nums){
+                if(!room_state[rn].empty()){
+                    if(operation == 2){
+                        room_state[rn][3] = room_state[rn][3]=="0"?"1":"0";
+                    }else{
+                        room_state[rn][3] = to_string(operation);
+                    }
+                }
+            }
+            save_all_file();
+            cout<<"Change successful";el;
         }
 
 
