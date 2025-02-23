@@ -215,8 +215,8 @@ class hotel_management_system : public running_func{
                 return;
             }
             for (int floor = 2;floor <= 30;floor++) {
-                for (int num = 0;num <= 9;num++) {
-                    string room_num = (floor < 10 ? "0" : "") + to_string(floor) + "0" + to_string(num), room_type = nor,room_member_num = sr;
+                for (int num = 0;num <= 20;num++) {
+                    string room_num = (floor < 10 ? "0" : "") + to_string(floor) + "0" + (num < 10 ? "0" : "") + to_string(num), room_type = nor, room_member_num = sr;
                     int money = 0;
                     if (floor > 20) { room_type = lux; }
                     if (num > 5) { room_member_num = dr; }
@@ -457,7 +457,7 @@ class hotel_management_system : public running_func{
                 time_stop(200);
                 login_menu();
             }
-
+            save_all_file();
             if(confirm_success){
                 cout<<"登录成功！";el;
                 time_stop(200);
@@ -507,6 +507,7 @@ class hotel_management_system : public running_func{
 
         //注册菜单
         void register_menu(){
+            save_all_file();
             clear_screen();
             RF.show_register_second_menu();
             char register_choice;
@@ -536,6 +537,7 @@ class hotel_management_system : public running_func{
 
         //注册信息输入菜单
         void entry_of_register_information(string register_standing){
+            save_all_file();
             clear_screen();
             cout<<register_standing<<" 注册";el;
             cout << setfill('-') << setw(30) << "-" << setfill(' ') << endl;
@@ -561,7 +563,7 @@ class hotel_management_system : public running_func{
                 clear_screen();
                 main_menu();
             }
-
+            save_all_file();
             //注册是否成功
             if(register_success == false){entry_of_register_information(register_standing);}
             else{
@@ -616,11 +618,13 @@ class hotel_management_system : public running_func{
 
         //充值
         void recharge_balance_operation(int money) {
+            save_all_file();
             cout<<"处理中，请稍候......";el;
             string temp = customer_map[name][1];
             int current_money = string_to_int(temp);
             int new_money = current_money + money;
             customer_map[name][1] = to_string(new_money);
+            save_all_file();
             time_stop(500);
             cout << "充值成功！";el;
             return;
@@ -700,6 +704,7 @@ class hotel_management_system : public running_func{
             cout << "输入任意字母返回";el;
             string cin1;cin >> cin1;
             clear_screen();
+            save_all_file();
             if (user == admin) { admin_operation(); }
             else { customer_operation(); }
         }
@@ -720,10 +725,12 @@ class hotel_management_system : public running_func{
             if(control == 2){admin_operation();}
             if(control != 0 and control != 1){
                 cout<<"输入错误，请重新输入";el;
-                time_stop(1000);clear_screen();
+                save_all_file();time_stop(1000);clear_screen();
                 admin_check();
             }
+            save_all_file();
             admin_or_customer_show(admin,control);
+
         }
 
 
@@ -859,7 +866,7 @@ class hotel_management_system : public running_func{
             cout<<"继续删除顾客？(Y/N)";el;
             char is_continue;cin>>is_continue;
             if(is_continue == 'Y' or is_continue == 'y'){
-                clear_screen();
+                clear_screen();save_all_file();
                 delete_customers();
             }else{
                 admin_operation();
@@ -884,7 +891,7 @@ class hotel_management_system : public running_func{
             else if(choice_type == '7'){admin_operation();}
             else {
                 cout<<"错误输入! ! !";el;
-                time_stop(500);clear_screen();
+                save_all_file();time_stop(500);clear_screen();
                 management_room_is_available_frist_menu();
             }
             management_room_is_available_second_menu(type,cnt);
@@ -1104,7 +1111,7 @@ class hotel_management_system : public running_func{
                 else if(choice_option == '7'){clear_screen();clear_screen();main_menu();}
                 else {
                     cout<<"错误输入！！！";el;
-                    save_all_file();time_stop(500);clear_screen();
+                    save_all_file();save_all_file();time_stop(500);clear_screen();
                     customer_operation();
                 }
             }
