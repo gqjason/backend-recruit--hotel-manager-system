@@ -591,7 +591,7 @@
 30002 luxurious single_room 200 0
 30003 luxurious single_room 200 0
 30004 luxurious single_room 200 0
-30005 luxurious single_room 200 1
+30005 luxurious single_room 200 0
 30006 luxurious double_room 225 0
 30007 luxurious double_room 225 0
 30008 luxurious double_room 225 0

@@ -1,1 +1,1 @@
-cus 123 0 NULL NULL
+a 1 1234067 30005 luxurious_single_room

@@ -116,8 +116,8 @@ public:
     void show_the_query_room_book_status_menu() {
         cout << "Check room status";el;
         cout << setfill('-') << setw(30) << "-" << setfill(' ') << endl;
-        cout << "1. Booked";el;
-        cout << "2. Not booked";el;
+        cout << "1. Not booked";el;
+        cout << "2. Booked";el;
         cout << "3. all";el;
         cout << "4. exit";el;
         cout << setfill('-') << setw(30) << "-" << setfill(' ') << endl;
@@ -719,7 +719,7 @@ public:
             time_stop(500);
             exit_operation();
         }
-        cout<<"If it shows empty, there are no rooms that meet the criteria.";el;
+        
         cout << "Enter any letter to return";el;
         string cin1;cin >> cin1;
         clear_screen();
@@ -862,6 +862,7 @@ public:
         }
         if (type == "NULL" and cnt == "NULL") { view_room_options(choice_state); }
         else { view_room_type_options(type, cnt, choice_state); }
+        cout<<"If it shows empty, there are no rooms that meet the criteria.";el;
     }
 
 
@@ -1003,9 +1004,8 @@ public:
         show_available_rooms(type, cnt);
         input_room_number_processing();
 
-
-
     }
+
     //展示可预订的房间
     void show_available_rooms(string type, string cnt) {
         if (type == "NULL" and cnt == "NULL") {
@@ -1031,12 +1031,14 @@ public:
         cin >> room_num;
         if (room_num == "1") { booking_room_first_menu(); }
         if (room_state[room_num].empty()) {
-            cout << "The room does not exist.";el;
-            time_stop(500);
-            input_room_number_processing();
+            cout << "The room does not exist.";
+            time_stop(500);clear_screen();
+            customer_operation();
         }
         else if (room_state[room_num][3] == "1") {
             cout << "The room has been booked.";el;
+            time_stop(500);clear_screen();
+            customer_operation();
         }
         else {
             int room_charge = string_to_int(room_state[room_num][2]);
@@ -1053,9 +1055,11 @@ public:
                 customer_map[name][2] = room_num;
                 if (!room_state[origin_room_num].empty()) { room_state[origin_room_num][3] = "0"; }
                 cout << "Booking successful!";el;
+                // save_all_file();
+                // customer_operation();
             }
         }
-        save_all_file();
+        //save_all_file();
         customer_operation();
     }
 
